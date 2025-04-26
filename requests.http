@@ -1,0 +1,16 @@
+###Requests endpoints
+
+### Get all messages
+GET http://localhost:3000/messages
+
+###Create a new message
+POST http://localhost:3000/messages
+content-type: application/json
+
+{
+    "message": "Hello, Nest from rest client!"
+}
+
+
+### Get a message by id
+GET http://localhost:3000/messages/1212
