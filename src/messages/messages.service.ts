@@ -1,11 +1,8 @@
+import { Injectable } from '@nestjs/common';
 import { MessagesRepository } from './messages.repository';
+@Injectable() //this decorator marks the class as a provider that can be injected into other classes or register in the di container
 export class MessagesService {
-  messagesRepo: MessagesRepository;
-  constructor() {
-    //service is creating its own dependency
-    //dont do this in real life apps
-    this.messagesRepo = new MessagesRepository();
-  }
+  constructor(public readonly messagesRepo: MessagesRepository) {}
 
   findOne(id: string) {
     return this.messagesRepo.findOne(id);
